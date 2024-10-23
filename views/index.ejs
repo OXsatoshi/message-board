@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>message board</div>
+      <button onclick="window.location.href='/new'">New</button>
+    </header>
+    <main>
+      <% formattedMessages.map((message,index) => { %>
+      <div>
+        <div class="user-name"><%= message.user %></div>
+        <div class="text-content"><%= message.text %></div>
+        <div class="date"><%= message.formattedDate %></div>
+        <button onclick="window.location.href='/message/<%= index %>'">
+          Open
+        </button>
+      </div>
+      <% }) %>
+    </main>
+  </body>
+</html>
